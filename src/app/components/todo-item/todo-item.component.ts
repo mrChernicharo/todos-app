@@ -12,4 +12,12 @@ export class TodoItemComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	setClasses() {
+		let classes = {
+			todo: true,
+			"is-complete": this.todo.completed,
+		};
+		return classes;
+	}
 }
