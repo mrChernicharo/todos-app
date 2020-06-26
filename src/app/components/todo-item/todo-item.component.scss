@@ -1,0 +1,27 @@
+div {
+	width: 400px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.del {
+	float: right;
+	background: red;
+	color: #fff;
+	border: none;
+	padding: 5px 9px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.todo {
+	background: #f4f4f4;
+	padding: 10px;
+	border-bottom: 2px dotted #ccc;
+}
+
+.is-complete {
+	text-decoration: line-through;
+}
