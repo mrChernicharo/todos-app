@@ -8,7 +8,6 @@ import { Todo } from '../../models/Todo';
 	styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-	title: string = 'My Todos';
 	todos: Todo[] = [];
 
 	constructor(private todoService: TodoService) {}
@@ -22,6 +21,13 @@ export class TodosComponent implements OnInit {
 		// delete from server
 		this.todoService.deleteTodo(todo).subscribe();
 		// delete from UI
-		this.todos = this.todos.filter(item => item.id !== todo.id);
+		this.todos = this.todos.filter(item => item.title !== todo.title);
+	}
+
+	addTodo(todo: Todo) {
+		this.todoService.addTodo(todo).subscribe(todo => {
+			this.todos.push(todo);
+			console.log(this.todos);
+		});
 	}
 }
